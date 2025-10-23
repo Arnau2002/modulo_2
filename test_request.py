@@ -20,24 +20,24 @@ time.sleep(2) # Pequeña espera por si la DB tarda en iniciar
 # 1. CREACIÓN DE RECURSOS (POST)
 ####################################
 
-print("="*35)
-print("1. CREACIÓN DE RECURSOS (POST)")
-print("="*35)
+# print("="*35)
+# print("1. CREACIÓN DE RECURSOS (POST)")
+# print("="*35)
 
-# 1.1 POST Película
-print("\n--> POST /peliculas/")
-response = requests.post(f"{BASE_URL}/peliculas/", json=PELICULA_DATA)
-print(f"Código: {response.status_code} | Película creada: {response.json().get('titulo', 'ERROR')}")
+# # 1.1 POST Película
+# print("\n--> POST /peliculas/")
+# response = requests.post(f"{BASE_URL}/peliculas/", json=PELICULA_DATA)
+# print(f"Código: {response.status_code} | Película creada: {response.json().get('titulo', 'ERROR')}")
 
-# 1.2 POST Cliente
-print("--> POST /clientes/")
-response = requests.post(f"{BASE_URL}/clientes/", json=CLIENTE_DATA)
-print(f"Código: {response.status_code} | Cliente creado: {response.json().get('nombre', 'ERROR')}")
+# # 1.2 POST Cliente
+# print("--> POST /clientes/")
+# response = requests.post(f"{BASE_URL}/clientes/", json=CLIENTE_DATA)
+# print(f"Código: {response.status_code} | Cliente creado: {response.json().get('nombre', 'ERROR')}")
 
-# 1.3 GET Listar Películas y Clientes (Verificación)
-print("\n--> GET /peliculas/ (Verificación)")
-response = requests.get(f"{BASE_URL}/peliculas/")
-print(f"Código: {response.status_code} | Total de películas: {len(response.json())}")
+# # 1.3 GET Listar Películas y Clientes (Verificación)
+# print("\n--> GET /peliculas/ (Verificación)")
+# response = requests.get(f"{BASE_URL}/peliculas/")
+# print(f"Código: {response.status_code} | Total de películas: {len(response.json())}")
 
 
 
@@ -87,23 +87,23 @@ print(f"Código: {response.status_code} | Total de películas: {len(response.jso
 ###################################
 # 3. LIMPIEZA FINAL (DELETE)
 ###################################
-# print("\n"+"="*35)
-# print("3. LIMPIEZA FINAL DE RECURSOS (DELETE)")
-# print("="*35)
+print("\n"+"="*35)
+print("3. LIMPIEZA FINAL DE RECURSOS (DELETE)")
+print("="*35)
 
-# # 3.1 DELETE Película (ID 1)
-# print("\n--> DELETE /peliculas/{id}")
-# response = requests.delete(f"{BASE_URL}/peliculas/{ALQUILER_DATA['pelicula_id']}")
-# print(f"Código: {response.status_code} | Película eliminada")
+# 3.1 DELETE Película (ID 1)
+print("\n--> DELETE /peliculas/{id}")
+response = requests.delete(f"{BASE_URL}/peliculas/{ALQUILER_DATA['pelicula_id']}")
+print(f"Código: {response.status_code} | Película eliminada")
 
-# # 3.2 DELETE Cliente (ID 1)
-# print("--> DELETE /clientes/{id}")
-# response = requests.delete(f"{BASE_URL}/clientes/{ALQUILER_DATA['cliente_id']}")
-# print(f"Código: {response.status_code} | Cliente eliminado")
+# 3.2 DELETE Cliente (ID 1)
+print("--> DELETE /clientes/{id}")
+response = requests.delete(f"{BASE_URL}/clientes/{ALQUILER_DATA['cliente_id']}")
+print(f"Código: {response.status_code} | Cliente eliminado")
 
-# # 3.3 GET Verificación final (DEBE MOSTRAR 0 PELICULAS)
-# print("\n--> GET /peliculas/ (Verificación final)")
-# response = requests.get(f"{BASE_URL}/peliculas/")
-# print(f"Código: {response.status_code} | Total de películas: {len(response.json())}")
+# 3.3 GET Verificación final (DEBE MOSTRAR 0 PELICULAS)
+print("\n--> GET /peliculas/ (Verificación final)")
+response = requests.get(f"{BASE_URL}/peliculas/")
+print(f"Código: {response.status_code} | Total de películas: {len(response.json())}")
 
 

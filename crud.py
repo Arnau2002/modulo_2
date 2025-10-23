@@ -56,7 +56,7 @@ def delete_recurso(db: Session, orm_model, item_id: int):
     db.commit()
     return item
 
-# ------------------------------------
+
 # LÓGICA DE NEGOCIO Y TRANSACCIONES
 # ------------------------------------
 
