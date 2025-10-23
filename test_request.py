@@ -2,7 +2,7 @@ import requests
 import time
 
 
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "http://127.0.0.1:8000/peliculas"
 
 # ejemplo de datos
 PELICULA_DATA = {"titulo": "Shrek", "genero": "Ciencia Ficción"}
