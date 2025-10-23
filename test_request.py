@@ -2,7 +2,7 @@ import requests
 import time
 
 
-BASE_URL = "http://127.0.0.1:8000/peliculas"
+BASE_URL = "http://127.0.0.1:8000/"
 
 # ejemplo de datos
 PELICULA_DATA = {"titulo": "Shrek", "genero": "Ciencia Ficción"}
@@ -84,23 +84,23 @@ print(f"Código: {response.status_code} | Película 1 Disponible: {response.json
 ###################################
 # 3. LIMPIEZA FINAL (DELETE)
 ###################################
-print("\n"+"="*35)
-print("3. LIMPIEZA FINAL DE RECURSOS (DELETE)")
-print("="*35)
+# print("\n"+"="*35)
+# print("3. LIMPIEZA FINAL DE RECURSOS (DELETE)")
+# print("="*35)
 
-# 3.1 DELETE Película (ID 1)
-print("\n--> DELETE /peliculas/{id}")
-response = requests.delete(f"{BASE_URL}/peliculas/{ALQUILER_DATA['pelicula_id']}")
-print(f"Código: {response.status_code} | Película eliminada")
+# # 3.1 DELETE Película (ID 1)
+# print("\n--> DELETE /peliculas/{id}")
+# response = requests.delete(f"{BASE_URL}/peliculas/{ALQUILER_DATA['pelicula_id']}")
+# print(f"Código: {response.status_code} | Película eliminada")
 
-# 3.2 DELETE Cliente (ID 1)
-print("--> DELETE /clientes/{id}")
-response = requests.delete(f"{BASE_URL}/clientes/{ALQUILER_DATA['cliente_id']}")
-print(f"Código: {response.status_code} | Cliente eliminado")
+# # 3.2 DELETE Cliente (ID 1)
+# print("--> DELETE /clientes/{id}")
+# response = requests.delete(f"{BASE_URL}/clientes/{ALQUILER_DATA['cliente_id']}")
+# print(f"Código: {response.status_code} | Cliente eliminado")
 
-# 3.3 GET Verificación final (DEBE MOSTRAR 0 PELICULAS)
-print("\n--> GET /peliculas/ (Verificación final)")
-response = requests.get(f"{BASE_URL}/peliculas/")
-print(f"Código: {response.status_code} | Total de películas: {len(response.json())}")
+# # 3.3 GET Verificación final (DEBE MOSTRAR 0 PELICULAS)
+# print("\n--> GET /peliculas/ (Verificación final)")
+# response = requests.get(f"{BASE_URL}/peliculas/")
+# print(f"Código: {response.status_code} | Total de películas: {len(response.json())}")
 
 
